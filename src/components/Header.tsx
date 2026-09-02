@@ -1,6 +1,6 @@
 export default function Header() {
     return(
-        <header className="flex items-center justify-between mb-16 bg-[#1A1A1A] rounded-2xl px-3 py-2">
+        <header className="flex items-center justify-between bg-[#1A1A1A] rounded-2xl px-3 py-2">
             <span className="flex items-center gap-2 pl-2 text-white font-bold tracking-tight text-base">
                 <img src="/Logo.png" alt="logo" width={28} height={28} />
                 Kang Minseo

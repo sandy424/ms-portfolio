@@ -25,9 +25,10 @@ export default function History() {
 
                         <div className="m-12 flex justify-between gap-10">
                             <ul className="list-disc list-inside font-medium space-y-5 text-lg flex flex-col justify-center">
-                                <li>ITQ</li>
-                                <li>GTQ 1급</li>
-                                <li>정보기기운용기능사</li>
+                                <li>ITQ  |  2022</li>
+                                <li>GTQ 1급  |  2022</li>
+                                <li>정보기기운용기능사  |  2022</li>
+                                <li>정보처리기사 취득 예정  | 실기 준비 중</li>
                             </ul>
                             <img className="" src="/Education.png" alt="education" />
                         </div>

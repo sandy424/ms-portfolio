@@ -31,43 +31,42 @@ const careerData: CareerItem[] = [
     company: "공감오래콘텐츠",
     content: [],
   },
-]
+];
 
 export default function Career() {
-  return(
-    <div className="border border-transparent bg-black/5 duration rounded-2xl p-12 w-2xl">
-      <h2 className="text-3xl font-bold">경력</h2>
+  return (
+    <div className="flex w-full flex-col rounded-2xl border border-transparent bg-black/5 p-6 sm:p-8 lg:max-w-[720px] lg:p-12">
+      <h2 className="text-2xl font-bold sm:text-3xl">경력</h2>
 
-      <div className="relative pl-7 mt-10 pb-10">
-        {/* 선 */}
-        <div className="absolute left-[6px] top-2 bottom-2 w-px bg-gray-300" />
+      <div className="relative mt-10 flex-1 pb-10 pl-7">
+        <div className="absolute bottom-2 left-[6px] top-2 w-px bg-gray-300" />
 
-          {careerData.map((item, index) => (
-            <div
-              key={item.company}
-              className={index === careerData.length - 1 ? "relative" : "relative mb-9"}
-            >
-              {/* 원 */}
-              <div className="absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full border border-gray-500 border-3 bg-gray-50" />
+        {careerData.map((item, index) => (
+          <div
+            key={item.company}
+            className={index === careerData.length - 1 ? "relative" : "relative mb-9"}
+          >
+            <div className="absolute -left-7 top-1.5 h-3.5 w-3.5 rounded-full border-3 border-gray-500 bg-gray-50" />
 
-              <div className="flex items-center justify-between mb-4 pl-4">
-                <span className="text-lg font-semibold text-gray-500 leading-loose">{item.period}</span>
-                <span className="bg-green-100/50 text-sm font-semibold py-1.5 px-3 rounded-lg">{item.tag}</span>
-              </div>
-
-              <p className="text-2xl font-bold mb-6 pl-4">{item.company}</p>
-
-              {item.content && (
-                <ul className="list-disc text-base pl-13 space-y-2">
-                  {item.content.map((content) => (
-                    <li key={content}>{content}</li>
-                  ))}
-                </ul>
-              )}
+            <div className="mb-4 flex flex-col gap-2 pl-4 sm:flex-row sm:items-center sm:justify-between">
+              <span className="text-base font-semibold leading-loose text-gray-500 sm:text-lg">{item.period}</span>
+              <span className="inline-flex w-fit rounded-lg bg-green-100/50 px-3 py-1.5 text-xs font-semibold sm:text-sm">
+                {item.tag}
+              </span>
             </div>
-          ))}
-                        
-        </div>
+
+            <p className="mb-6 pl-4 text-xl font-bold sm:text-2xl">{item.company}</p>
+
+            {item.content && (
+              <ul className="list-disc space-y-2 pl-10 text-sm sm:pl-13 sm:text-base">
+                {item.content.map((content) => (
+                  <li key={content}>{content}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
       </div>
-  )
+    </div>
+  );
 }

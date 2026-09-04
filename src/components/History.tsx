@@ -2,7 +2,7 @@ import Career from "./Career";
 
 export default function History() {
   return (
-    <section className="flex min-h-screen w-full items-center justify-center px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+    <section className="flex min-h-screen w-full items-center justify-center px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20">
       <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-8 lg:flex-row lg:items-stretch lg:justify-center">
         <div className="flex w-full flex-col gap-8 lg:max-w-[720px]">
           <div className="rounded-2xl border border-transparent bg-black/5 p-6 sm:p-10">

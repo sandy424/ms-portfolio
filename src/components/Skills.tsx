@@ -28,7 +28,7 @@ const skillsData: SkillType[] = [
 
 export default function Skills() {
   return(
-    <section className="flex h-auto w-full items-center justify-center px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+    <section className="flex h-auto w-full items-center justify-center px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20">
       <div className="mx-auto w-full max-w-[1600px]">
         <h1 className="text-4xl font-bold sm:text-5xl">핵심 역량</h1>
         <p className="mt-6 text-lg font-medium tracking-tight text-gray-600 sm:text-xl">Key Skills</p>

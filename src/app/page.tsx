@@ -4,6 +4,7 @@ import AboutMe from "../components/AboutMe";
 import History from "../components/History";
 import Skills from "../components/Skills";
 import Stack from "../components/Stack";
+import Contact from "../components/Contact";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Skills />
       <Stack />
       <History />
+      <Contact />
     </main>
   );
 }

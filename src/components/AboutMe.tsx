@@ -1,6 +1,6 @@
 export default function AboutMe() {
   return (
-    <section className="flex min-h-screen w-full items-center px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section className="flex min-h-screen w-full items-center px-4 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto w-full max-w-[1600px]">
         <p className="text-lg font-medium tracking-tight tracking-wide text-gray-600 sm:text-xl">
           Frontend Developer

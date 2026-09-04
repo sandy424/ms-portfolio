@@ -3,6 +3,7 @@ import Intro from "../components/Intro";
 import AboutMe from "../components/AboutMe";
 import History from "../components/History";
 import Skills from "../components/Skills";
+import Stack from "../components/Stack";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       </div>
       <AboutMe />
       <Skills />
+      <Stack />
       <History />
     </main>
   );

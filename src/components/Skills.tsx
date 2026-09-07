@@ -33,7 +33,7 @@ export default function Skills() {
         <h1 className="text-4xl font-bold sm:text-5xl">핵심 역량</h1>
         <p className="mt-6 text-lg font-medium tracking-tight text-gray-600 sm:text-xl">Key Skills</p>
 
-        <div className="mt-18 flex flex-col items-center gap-6 sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:items-stretch lg:justify-center lg:gap-6 xl:gap-12">
+        <div className="mt-16 flex flex-col items-center gap-6 sm:grid sm:grid-cols-2 sm:mt-10 lg:flex lg:flex-row lg:items-stretch lg:justify-center lg:gap-6 xl:gap-12 ">
           {skillsData.map((skill, index) => (
             <div
               key={index}

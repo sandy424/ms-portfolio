@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 type ProjectType = {
+  slug: string;
   title: string;
   description: string;
   tech: string[];
@@ -7,6 +10,7 @@ type ProjectType = {
 
 const projects : ProjectType[] = [
   {
+    slug: "ezread",
     title: "EZREAD (졸업작품)",
     description : "문해력에 어려움이 있는 사용자를 위한 OCR 기반 텍스트 변환 서비스 개발",
     tech: [
@@ -14,10 +18,12 @@ const projects : ProjectType[] = [
       "Typescript",
       "Vite",
       "OCR",
+      "Tailwind CSS",
     ],
     picture: "/ezread.png"
   },
   {
+    slug: "keung",
     title: "keung-keung (킁킁)",
     description: "디저트 유목인들을 위한 디저트 전문 지도 웹 서비스 개발",
     tech: [
@@ -25,6 +31,7 @@ const projects : ProjectType[] = [
       "Javascript",
       "Vite",
       "Naver Maps API",
+      "Tailwind CSS",
     ],
     picture: "/keung.png",
   }
@@ -45,7 +52,7 @@ export default function Projects() {
               <div className="flex flex-col gap-8 w-full lg:w-1/2">
                 <h2 className="text-3xl font-bold lg:text-4xl">{project.title}</h2>
                 <p className="text-gray-500 text-base">{project.description}</p>
-                <ul className="flex gap-4 pt-2">
+                <ul className="flex flex-wrap gap-4 pt-2">
                   {project.tech.map((item) => (
                     <li
                       key={item}
@@ -55,9 +62,12 @@ export default function Projects() {
                     </li>
                   ))}
                 </ul>
-                <button className="mt-4 w-full rounded-xl bg-black py-2 text-lg font-medium text-white cursor-pointer sm:w-auto sm:px-10">
+                <Link 
+                  href={`/projects/${project.slug}`}
+                  className="mt-4 w-full rounded-xl bg-black py-2 text-lg font-medium text-white cursor-pointer sm:w-auto sm:px-10 text-center"
+                  >
                   See More
-                </button>
+                </Link>
               </div>
 
               <div className="w-full lg:w-1/2">

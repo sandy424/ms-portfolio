@@ -5,7 +5,7 @@ export type ProjectType = {
   slug: string;
   title: string;
   description: string;
-  stack: string[];
+  tech: string[];
   picture: string;
   period: string;
 };

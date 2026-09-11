@@ -7,6 +7,8 @@ export type ProjectType = {
   form: string;  //형태
   role: string;  //역할
   picture: string;
+  url: string;
+  github: string;
 };
 
 export const projects: ProjectType[] = [
@@ -19,6 +21,8 @@ export const projects: ProjectType[] = [
     form: "팀 프로젝트",
     role: "Frontend",
     picture: "/ezread.png",
+    url: "https://easyread-vite.vercel.app/",
+    github: "https://github.com/sandy424/easyread-vite",
   },
   {
     slug: "keung-keung",
@@ -29,6 +33,8 @@ export const projects: ProjectType[] = [
     form: "팀 프로젝트",
     role: "Frontend",
     picture: "/keung.png",
+    url: "https://keung-keung.vercel.app/",
+    github: "https://github.com/sandy424/keung-keung",
   },
 ];
 

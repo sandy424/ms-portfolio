@@ -30,7 +30,7 @@ export const projects: ProjectType[] = [
     description: "디저트 유목인들을 위한 디저트 전문 지도 웹 서비스 개발",
     tech: ["React", "Javascript", "Vite", "Naver Maps API", "Tailwind CSS"],
     period: "2026.02 ~",
-    form: "팀 프로젝트",
+    form: "개인 프로젝트",
     role: "Frontend",
     picture: "/keung.png",
     url: "https://keung-keung.vercel.app/",

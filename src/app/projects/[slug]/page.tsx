@@ -3,60 +3,13 @@ import Image from "next/image";
 import { projects } from "../../../data/projects";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import { ParItem } from "@/src/types/project";
 
-type Functions = {
-  feature: string;
-  picture: string;
-}
-
-type ParItem = {
-  label: "PROBLEM" | "ACTION" | "RESULT";
-  labelColor: string;
-  content: string | string[];
-}
-
-const functionItems: Functions[] = [
-  {
-    feature: "텍스트 요약",
-    picture: "/project/ezread/text.png",
-  },
-  {
-    feature: "쉽게 읽기",
-    picture: "/project/ezread/book.png",
-  },
-  {
-    feature: "회원 인증",
-    picture: "/project/ezread/auth.png",
-  },
-  {
-    feature: "사용 기록",
-    picture: "/project/ezread/history.png",
-  },
-]
-
-const technicalChallenge: ParItem[] = [
-  {
-    label: "PROBLEM",
-    labelColor: "bg-amber-100 text-amber-700",
-    content:
-      "백엔드 API 연동 과정에서 useEffect와 fetch/axios로 초기 데이터를 불러오도록 구현했으나, 컴포넌트 리렌더링 시 불필요한 중복 네트워크 요청이 발생하고 통신 지연 시 빈 화면이 노출되는 UX 저하 문제가 있었습니다.",
-  },
-  {
-    label: "ACTION",
-    labelColor: "bg-yellow-100 text-yellow-700",
-    content: [
-      "isLoading, isError 상태를 분리 관리해 로딩 중엔 스켈레톤 UI를, 에러 시엔 토스트 메시지로 사용자 친화적 피드백 제공",
-      "TypeScript로 API 응답 타입을 엄격히 정의하고 옵셔널 체이닝을 적용해 런타임 에러 방지",
-      "React Query를 도입해 캐싱 및 중복 요청 최적화 진행",
-    ],
-  },
-  {
-    label: "RESULT",
-    labelColor: "bg-emerald-100 text-emerald-700",
-    content:
-      "불필요한 API 호출을 줄이고 안정적인 에러 핸들링을 구축함으로써, 네트워크 환경이 불안정한 상황에서도 비정상 종료 없이 부드러운 사용자 경험을 제공할 수 있도록 개선했습니다.",
-  },
-];
+const labelStyles: Record<ParItem["label"], string> = {
+  PROBLEM: "bg-amber-100 text-amber-700",
+  ACTION: "bg-yellow-100 text-yellow-700",
+  RESULT: "bg-emerald-100 text-emerald-700",
+};
 
 // projects 배열을 순회하면서 같은 객체 배열을 반환한다.
 export function generateStaticParams() {
@@ -70,6 +23,7 @@ export default async function ProjectDetailPage({
 }) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
+
 
   if (!project) return notFound();
 
@@ -121,12 +75,12 @@ export default async function ProjectDetailPage({
         {/* 설명 */}
         <div className="px-1 py-8 sm:p-4 sm:pt-16 ">
           <h2 className="text-3xl font-bold">왜 만들었나</h2>
-          <p className="mt-6 text-lg text-gray-600 font-base break-words leading-relaxed">문명의 발전으로 독해 수준이 점차 떨어지는 일상에서, 흔히 마주치는 글이 누군가에게는 큰 장벽으로 다가올 수 있다는 문제의식이 있었습니다. 문서를 올리면 짧고 간단한 말로 다시 써주는 서비스를 목표로 했습니다.</p>
+          <p className="mt-6 text-lg text-gray-600 font-base break-words leading-relaxed">{project.why}</p>
           <hr className="my-16 border-gray-200" />
 
           <h2 className="text-3xl font-bold">핵심 기능</h2>
           <div className="m-0 mt-4 grid grid-cols-2 gap-3 sm:m-8 sm:grid-cols-4 sm:gap-4">
-            {functionItems.map((item) => (
+            {project.features.map((item) => (
               <div
                 key={item.feature}
                 className="flex min-w-0 flex-col items-center justify-center gap-3 rounded-lg border border-gray-300 px-2 py-4 text-center transition-colors sm:px-4 sm:py-5"
@@ -141,30 +95,44 @@ export default async function ProjectDetailPage({
           <h2 className="text-3xl font-bold">기술적으로 고민한 지점</h2>
           <div>
             <div className="mt-8 space-y-10">
-              {technicalChallenge.map((item) => (
-                <div key={item.label}>
-                  <span
-                    className={`inline-block rounded px-3 py-1.5 text-xs font-semibold ${item.labelColor}`}
+              {project.technicalChallenge.map((challenge) => (
+                <div key={challenge.title}>
+                  <h3
+                    className="text-base font-semibold text-gray-800 sm:text-lg"
                   >
-                    {item.label}
-                  </span>
+                    {challenge.title}
+                  </h3>
 
-                  {Array.isArray(item.content) ? (
-                    <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-relaxed text-gray-600 sm:text-base">
-                      {item.content.map((line, i) => (
-                        <li key={i}>{line}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="mt-4 text-sm leading-relaxed text-gray-600 sm:text-base">
-                      {item.content}
-                    </p>
-                  )}
+                  <div className="mt-4 space-y-4">
+                  {challenge.items.map((item) => (
+                    <div key={item.label}>
+                      <span
+                        className={`inline-block rounded px-2.5 py-1 text-xs font-semibold ${labelStyles[item.label]}`}
+                      >
+                        {item.label}
+                      </span>
+                      {Array.isArray(item.content) ? (
+                        <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-relaxed text-gray-600 sm:text-base">
+                          {item.content.map((line, i) => (
+                            <li key={i}>{line}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="mt-4 text-sm leading-8 text-gray-600 sm:text-base">
+                          {item.content}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
                 </div>
               ))}
             </div>
           </div>
-
+          <hr className="my-16 border-gray-200" />
+          
+          <h2 className="text-3xl font-bold">회고</h2>
+          <p className="mt-6 text-sm text-gray-600 sm:text-base leading-8">{project.retrospect}</p>
         </div>
       </div>
     </div>

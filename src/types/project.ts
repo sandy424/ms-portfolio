@@ -21,6 +21,7 @@ export type ProjectType = {
   tech: string[];
   role: string;
   picture: string;
+  slideId: string;
   period: string;
   form: string;
   url: string;

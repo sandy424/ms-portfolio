@@ -10,6 +10,7 @@ export const projects: ProjectType[] = [
     form: "팀 프로젝트",
     role: "Frontend",
     picture: "/ezread.png",
+    slideId: "1BuQbsPqTvkhQpRUFcJQJR6jeTWOneByJ",
     url: "https://easyread-vite.vercel.app/",
     github: "https://github.com/sandy424/easyread-vite",
     why: "문명의 발전으로 독해 수준이 점차 떨어지는 일상에서, 흔히 마주치는 글이 누군가에게는 큰 장벽으로 다가올 수 있다는 문제의식이 있었습니다. 문서를 올리면 짧고 간단한 말로 다시 써주는 서비스를 목표로 했습니다.",
@@ -56,6 +57,7 @@ export const projects: ProjectType[] = [
     form: "개인 프로젝트",
     role: "Frontend",
     picture: "/keung.png",
+    slideId: "",
     url: "https://keung-keung.vercel.app/",
     github: "https://github.com/sandy424/keung-keung",
     why: `최근 디저트 트렌드가 빠르게 변화하면서 새로운 디저트와 맛집을 찾는 사람들이 많아지고 있습니다. 하지만 다양한 디저트 가게를 일일이 찾아다니며 정보를 확인하는 데에는 불편함이 있다고 느꼈습니다.

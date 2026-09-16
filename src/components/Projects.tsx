@@ -5,6 +5,7 @@ export default function Projects() {
   return(
     <section id="projects" className="flex min-h-screen w-full items-center justify-center px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-30">
       <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-8 lg:flex-row lg:items-stretch lg:justify-center">
+        
         <div className="flex flex-col gap-12 px-10">
           {projects.map((project, index) => (
             <article key={project.title}

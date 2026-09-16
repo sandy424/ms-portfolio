@@ -4,6 +4,7 @@ import { projects } from "../../../data/projects";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { ParItem } from "@/src/types/project";
+import SlidePpt from "@/src/components/SlidePpt";
 
 const labelStyles: Record<ParItem["label"], string> = {
   PROBLEM: "bg-amber-100 text-amber-700",
@@ -71,6 +72,13 @@ export default async function ProjectDetailPage({
           height={675}
           className="mt-8 aspect-[21/9] w-full rounded-2xl object-cover sm:mt-10"
         />
+        
+        {project.slideId && (
+          <>
+            <h2 className="py-8 sm:p-4 sm:pt-16 text-3xl font-bold">발표 자료</h2>
+            <SlidePpt slideId={project.slideId} />
+          </>
+        )}
 
         {/* 설명 */}
         <div className="px-1 py-8 sm:p-4 sm:pt-16 ">

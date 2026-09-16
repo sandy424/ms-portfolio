@@ -75,7 +75,7 @@ export default async function ProjectDetailPage({
         {/* 설명 */}
         <div className="px-1 py-8 sm:p-4 sm:pt-16 ">
           <h2 className="text-3xl font-bold">왜 만들었나</h2>
-          <p className="mt-6 text-lg text-gray-600 font-base break-words leading-relaxed">{project.why}</p>
+          <p className="mt-6 text-lg text-gray-600 font-base break-words leading-8 whitespace-pre-line">{project.why}</p>
           <hr className="my-16 border-gray-200" />
 
           <h2 className="text-3xl font-bold">핵심 기능</h2>
@@ -94,16 +94,16 @@ export default async function ProjectDetailPage({
           
           <h2 className="text-3xl font-bold">기술적으로 고민한 지점</h2>
           <div>
-            <div className="mt-8 space-y-10">
+            <div className="mt-12 space-y-10">
               {project.technicalChallenge.map((challenge) => (
                 <div key={challenge.title}>
                   <h3
-                    className="text-base font-semibold text-gray-800 sm:text-lg"
+                    className="text-base font-semibold text-gray-800 sm:text-xl"
                   >
                     {challenge.title}
                   </h3>
 
-                  <div className="mt-4 space-y-4">
+                  <div className="mt-8 space-y-8">
                   {challenge.items.map((item) => (
                     <div key={item.label}>
                       <span
@@ -132,7 +132,7 @@ export default async function ProjectDetailPage({
           <hr className="my-16 border-gray-200" />
           
           <h2 className="text-3xl font-bold">회고</h2>
-          <p className="mt-6 text-sm text-gray-600 sm:text-base leading-8">{project.retrospect}</p>
+          <p className="mt-6 text-sm text-gray-600 sm:text-base leading-8 whitespace-pre-line">{project.retrospect}</p>
         </div>
       </div>
     </div>

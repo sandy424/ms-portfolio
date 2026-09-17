@@ -66,8 +66,8 @@ export const projects: ProjectType[] = [
     features: [
       { feature: "지도 탐색", picture: "/project/keung/map.png" },
       { feature: "회원 인증", picture: "/project/keung/auth.png" },
-      { feature: "댓글", picture: "/project/keung/comment.png" },
-      { feature: "찜하기", picture: "/project/keung/like.png" },
+      { feature: "댓글", picture: "/project/keung/chat.png" },
+      { feature: "찜하기", picture: "/project/keung/love.png" },
     ],
     technicalChallenge: [
       {

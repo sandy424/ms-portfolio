@@ -13,6 +13,7 @@ export const projects: ProjectType[] = [
     slideId: "1BuQbsPqTvkhQpRUFcJQJR6jeTWOneByJ",
     url: "https://easyread-vite.vercel.app/",
     github: "https://github.com/sandy424/easyread-vite",
+    notion: "https://app.notion.com/p/2f07a15b517a8018afa8dde3ef7302e6?source=copy_link",
     why: "문명의 발전으로 독해 수준이 점차 떨어지는 일상에서, 흔히 마주치는 글이 누군가에게는 큰 장벽으로 다가올 수 있다는 문제의식이 있었습니다. 문서를 올리면 짧고 간단한 말로 다시 써주는 서비스를 목표로 했습니다.",
     features: [
       {
@@ -60,6 +61,7 @@ export const projects: ProjectType[] = [
     slideId: "",
     url: "https://keung-keung.vercel.app/",
     github: "https://github.com/sandy424/keung-keung",
+    notion: "https://app.notion.com/p/3df7a15b517a8036a5e9c0a1f47e5fca?source=copy_link",
     why: `최근 디저트 트렌드가 빠르게 변화하면서 새로운 디저트와 맛집을 찾는 사람들이 많아지고 있습니다. 하지만 다양한 디저트 가게를 일일이 찾아다니며 정보를 확인하는 데에는 불편함이 있다고 느꼈습니다.
 
     이에 디저트를 찾아다니는 ‘디저트 유목민’을 위해 디저트 가게만 모아 한눈에 탐색할 수 있는 지도 기반 웹 서비스를 만들게 되었습니다. 사용자가 자신이 알고 있는 디저트 가게를 직접 등록하고 다른 사용자들과 공유하며, 댓글과 리뷰를 통해 다양한 가게의 정보를 함께 쌓아갈 수 있도록 기획했습니다.`,

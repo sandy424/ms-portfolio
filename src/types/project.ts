@@ -26,6 +26,7 @@ export type ProjectType = {
   form: string;
   url: string;
   github: string;
+  notion: string;
   why: string;
   features: ProjectFeature[];
   technicalChallenge: TechnicalChallenge[];

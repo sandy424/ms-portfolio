@@ -58,9 +58,13 @@ export default async function ProjectDetailPage({
             <img src="/link.png" alt="" className="w-6 h-6" />
             <span className="text-white">라이브 데모</span>
           </a>
-          <a href={project.github} className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-2 sm:justify-start">
+          <a href={project.github} className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 hover:bg-gray-400 px-4 py-2 sm:justify-start">
             <img src="/github.png" alt="" className="w-6 h-6" />
             <span>깃허브</span>
+          </a>
+           <a href={project.notion} className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 hover:bg-gray-400 px-4 py-2 sm:justify-start">
+            <img src="/notion.png" alt="" className="w-6 h-6" />
+            <span>노션</span>
           </a>
           <p className="break-words text-sm font-semibold text-gray-500">{project.period} | {project.form}</p>
         </div>

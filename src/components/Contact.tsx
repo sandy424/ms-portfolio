@@ -32,7 +32,7 @@ export default function Contact() {
           </div>
 
           {/* 이력서 다운로드 버튼 */}
-          <a href="/강민서 이력서.pdf"
+          <a href="/이력서.pdf"
             download
             className="mt-8 block w-full text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300"
           >

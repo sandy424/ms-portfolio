@@ -35,35 +35,39 @@ const careerData: CareerItem[] = [
 
 export default function Career() {
   return (
-    <div className="flex w-full flex-col rounded-2xl border border-transparent bg-black/5 p-6 sm:p-8 lg:max-w-[720px] lg:p-12">
-      <h2 className="text-2xl font-bold sm:text-3xl">경력</h2>
+    <div className="order-2 grid min-w-0 grid-cols-[160px_minmax(0,1fr)] gap-8 border-t border-[#E6E8EB] py-12 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-16 lg:py-14 max-[720px]:grid-cols-1 max-[720px]:gap-5">
+      <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">경력</h2>
 
-      <div className="relative mt-10 flex-1 pb-10 pl-7">
-        <div className="absolute bottom-2 left-[6px] top-2 w-px bg-gray-300" />
+      <div className="flex min-w-0 flex-col-reverse [&>div:last-child>div:last-child]:before:border-[#2457F5] [&>div:last-child>div:last-child]:before:bg-[#2457F5] [&>div:last-child>div:last-child]:before:shadow-[0_0_0_4px_#DCE6FF]">
+        <div className="hidden" />
 
         {careerData.map((item, index) => (
           <div
             key={item.company}
-            className={index === careerData.length - 1 ? "relative" : "relative mb-9"}
+            className={index === careerData.length - 1 ? "grid min-w-0 grid-cols-[150px_minmax(0,1fr)] lg:grid-cols-[180px_minmax(0,1fr)] max-[720px]:grid-cols-1 max-[720px]:gap-2" : "grid min-w-0 grid-cols-[150px_minmax(0,1fr)] lg:grid-cols-[180px_minmax(0,1fr)] max-[720px]:grid-cols-1 max-[720px]:gap-2"}
           >
-            <div className="absolute -left-7 top-1.5 h-3.5 w-3.5 rounded-full border-3 border-gray-500 bg-gray-50" />
+            <div className="hidden" />
 
-            <div className="mb-4 flex flex-col gap-2 pl-4 sm:flex-row sm:items-center sm:justify-between">
-              <span className="text-base font-semibold leading-loose text-gray-500 sm:text-lg">{item.period}</span>
-              <span className="inline-flex w-fit rounded-lg bg-green-100/50 px-3 py-1.5 text-xs font-semibold sm:text-sm">
-                {item.tag}
-              </span>
+            <div className="pt-1 text-sm text-[#5B626B] max-[720px]:pl-8 max-[720px]:pt-0">
+              <span>{item.period}</span>
             </div>
 
-            <p className="mb-6 pl-4 text-xl font-bold sm:text-2xl">{item.company}</p>
+            <div className="relative min-w-0 border-l border-[#D5D9DE] pb-12 pl-8 lg:pb-14 lg:pl-10 before:absolute before:top-2 before:-left-[6px] before:h-[11px] before:w-[11px] before:rounded-full before:border-2 before:border-[#9AA1AA] before:bg-white before:content-['']">
+              <div className="flex flex-wrap items-center gap-3">
+                <p className="text-[22px] font-bold sm:text-2xl [overflow-wrap:anywhere]">{item.company}</p>
+                <span className="w-fit rounded-full bg-[#F1F3F5] px-2.5 py-1 text-xs font-medium text-[#3A4048]">
+                  {item.tag}
+                </span>
+              </div>
 
-            {item.content && (
-              <ul className="list-disc space-y-2 pl-10 text-sm sm:pl-13 sm:text-base">
-                {item.content.map((content) => (
-                  <li key={content}>{content}</li>
-                ))}
-              </ul>
-            )}
+              {item.content && (
+                <ul className="mt-4 list-disc pl-[18px] text-[15px] leading-[1.8] text-[#3A4048] [overflow-wrap:anywhere]">
+                  {item.content.map((content) => (
+                    <li key={content}>{content}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
         ))}
       </div>

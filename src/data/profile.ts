@@ -139,20 +139,6 @@ export const experiences: Experience[] = [
       },
     ],
   },
-  {
-    company: "인테그로",
-    role: "콘텐츠 · 행정",
-    type: "단기 근무",
-    period: "2025.06 ~ 2025.08",
-    groups: [
-      {
-        items: [
-          "사업 홍보 콘텐츠 제작 및 사무·행정 지원 담당",
-          "업무 프로세스 정비를 통해 조직 운영 효율화에 기여",
-        ],
-      },
-    ],
-  },
 ];
 
 export const education = {

@@ -85,9 +85,10 @@ export default function Background() {
         <div {...reveal()} className="mt-5 rounded-2xl border border-line bg-surface p-6 sm:p-8">
           <CardTitle icon={Award}>자격 · 어학</CardTitle>
           <ul className="mt-6 grid gap-x-8 sm:grid-cols-2">
-            {certifications.map((cert) => (
+            {certifications.map((cert, index) => (
               <li
                 key={cert.name}
+                {...reveal("left", 150 + index * 90)}
                 className="flex items-center justify-between gap-4 border-b border-line py-4 last:border-b-0 sm:[&:nth-last-child(2):nth-child(odd)]:border-b-0"
               >
                 <div className="min-w-0">

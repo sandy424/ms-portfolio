@@ -7,7 +7,6 @@ export const profile = {
   email: "sandy424@naver.com",
   github: "https://github.com/sandy424",
   resume: "/이력서.pdf",
-  status: "공감오래콘텐츠 현장실습 중 · 2027.02 졸업예정",
 };
 
 export type Highlight = {

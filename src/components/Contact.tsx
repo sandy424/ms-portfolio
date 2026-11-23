@@ -1,11 +1,12 @@
 import { ArrowUpRight, Download, Mail } from "lucide-react";
 import { profile } from "../data/profile";
+import { reveal } from "../lib/motion";
 
 export default function Contact() {
   return (
     <section id="contact" className="scroll-mt-20 pb-6">
       <div className="mx-auto w-full max-w-[1248px] px-4 sm:px-6">
-      <div className="relative overflow-hidden rounded-3xl bg-ink px-6 py-16 text-white sm:px-12 sm:py-20 lg:px-16">
+      <div {...reveal("scale")} className="relative overflow-hidden rounded-3xl bg-ink px-6 py-16 text-white sm:px-12 sm:py-20 lg:px-16">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/40 blur-3xl"

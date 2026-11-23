@@ -12,10 +12,10 @@ export default function Contact() {
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/40 blur-3xl"
         />
         <div className="relative max-w-2xl">
-          <p className="font-serif text-2xl italic leading-none text-white/55 sm:text-[28px]">
+          <p className="font-display text-xl font-semibold leading-none tracking-[-0.01em] text-white/70 sm:text-[22px]">
             Contact
           </p>
-          <h2 className="mt-2 text-3xl font-bold leading-snug tracking-tight sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold leading-snug tracking-tight sm:text-4xl">
             읽어주셔서 감사합니다.
             <br />
             함께 일할 기회를 기다리고 있습니다.

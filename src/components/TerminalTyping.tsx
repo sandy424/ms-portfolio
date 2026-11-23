@@ -76,7 +76,16 @@ const DEFAULT_LINES: TerminalLine[] = [
     tokens: [
       { text: "tools: ", color: "key" },
       { text: '["Figma", "Github"]', color: "string" },
+      { text: ",", color: "plain" },
     ]
+  },
+  {
+    type: "code",
+    indent: true,
+    tokens: [
+      { text: "now: ", color: "key" },
+      { text: '"공감오래콘텐츠 현장실습 중"', color: "string" },
+    ],
   },
   {
     type: "code",
@@ -183,7 +192,7 @@ export default function TerminalTyping({
   return (
     <div
       ref={containerRef}
-      className="w-full max-w-[560px] overflow-hidden rounded-xl border border-[#1f1f1f] bg-[#0d0d0d] font-mono shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+      className="w-full max-w-[560px] overflow-hidden rounded-xl border border-[#1f1f1f] bg-[#0d0d0d] font-mono shadow-[0_24px_60px_-12px_rgba(18,20,23,0.35)]"
     >
       {/* 헤더 */}
       <div className="flex items-center gap-2 border-b border-[#1f1f1f] bg-[#161616] px-4 py-3">
@@ -196,7 +205,7 @@ export default function TerminalTyping({
       </div>
 
       {/* 본문 */}
-      <div className="min-h-[180px] px-5 py-6 text-sm leading-[1.8] sm:px-6 sm:py-7 sm:text-[15px]">
+      <div className="min-h-[300px] px-5 py-6 text-sm leading-[1.8] sm:px-6 sm:py-7 sm:text-[15px]">
         {lines.map((line, i) => {
           if (i > activeLine) return null;
           const count = renderedCounts[i] ?? 0;

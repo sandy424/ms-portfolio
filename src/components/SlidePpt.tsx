@@ -4,10 +4,11 @@ type SlideProps = {
 
 export default function SlidePpt({slideId}:SlideProps) {
   return(
-    <div className="relative w-full max-w-4xl mx-auto aspect-video rounded=lg overflow-hidden shadow-md mt-12">
+    <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-line bg-surface">
       <iframe 
       src={`https://docs.google.com/presentation/d/${slideId}/embed?start=false&loop=false&delayms=3000`}
-      className="absolute inset-0 w-full h-full"
+      title="발표 자료"
+      className="absolute inset-0 h-full w-full"
       allowFullScreen
       loading="lazy" />
     </div>

@@ -1,45 +1,60 @@
+import { ArrowUpRight, Download, Mail } from "lucide-react";
+import { profile } from "../data/profile";
+
 export default function Contact() {
-  return(
-    <section className="relative overflow-hidden h-auto w-full items-center justify-center px-4 py-28 sm:px-6 sm:py-14 lg:px-8 lg:py-40">
-      {/* 배경 블러 */}
-      <div className="absolute -top-16 -right-10 w-56 h-56 bg-blue-200 opacity-60 blur-3xl"/>
-      {/* 배경 블러 2 */}
-      <div className="absolute -bottom-12 -left-8 w-44 h-44 rounded-full bg-green-200 opacity-60 blur-3xl" />
+  return (
+    <section id="contact" className="scroll-mt-20 px-4 pb-6 sm:px-6">
+      <div className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-3xl bg-ink px-6 py-16 text-white sm:px-12 sm:py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/40 blur-3xl"
+        />
+        <div className="relative max-w-2xl">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+            Contact
+          </p>
+          <h2 className="mt-3 text-3xl font-bold leading-snug tracking-tight sm:text-4xl">
+            읽어주셔서 감사합니다.
+            <br />
+            함께 일할 기회를 기다리고 있습니다.
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-white/65 sm:text-lg">
+            궁금한 점이나 제안이 있으시면 편하게 연락 주세요.
+          </p>
 
-      <div className="relative mx-auto w-full max-w-[1600px] flex flex-col items-center justify-center">
-        <h3 className="text-base font-semibold">THANK YOU FOR READING</h3>
-        <h1 className="mt-4 text-xl font-bold sm:text-2xl">읽어주셔서 감사합니다</h1>
-
-        <div className="mt-10 border border-gray-200 rounded-lg p-6 sm:p-8 shadow-md w-full max-w-[500px]">
-          <div className="flex items-center">
-            <img src="/contact.png" alt="contact" className="w-10 h-10 bg-blue-200 rounded-md p-2" />
-            <span className="ml-4 text-2xl font-bold">Contact Me</span>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-[15px] font-semibold text-ink transition-colors hover:bg-white/90"
+            >
+              <Mail className="h-4 w-4" />
+              {profile.email}
+            </a>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              github.com/sandy424
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+            <a
+              href={profile.resume}
+              download
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              <Download className="h-4 w-4" />
+              이력서 다운로드
+            </a>
           </div>
-
-          <div className="mt-8 flex flex-col space-y-6">
-            <div className="pl-8 flex items-center">
-              <img src="/mail.png" alt="email" className="w-6 h-6 opacity-70" />
-              <a href="mailto:ming9boo@gmail.com" className="ml-4 hover:underline">
-                ming9boo@gmail.com
-              </a>
-            </div>
-            <div className="pl-8 flex items-center">
-              <img src="/github.png" alt="GitHub" className="w-6 h-6 opacity-70" />
-              <a href="https://github.com/sandy424" target="_blank" rel="noopener noreferrer" className="ml-4 hover:underline">
-                github.com/sandy424
-              </a>
-            </div>
-          </div>
-
-          {/* 이력서 다운로드 버튼 */}
-          <a href="/이력서.pdf"
-            download
-            className="mt-8 block w-full text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300"
-          >
-            이력서 다운로드
-          </a>
         </div>
       </div>
+
+      <footer className="mx-auto flex w-full max-w-6xl flex-col gap-1 py-8 text-sm text-muted sm:flex-row sm:justify-between">
+        <p>© 2026 {profile.englishName}. All rights reserved.</p>
+        <p>Built with Next.js · Tailwind CSS</p>
+      </footer>
     </section>
-  )
+  );
 }

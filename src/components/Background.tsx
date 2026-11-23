@@ -16,7 +16,7 @@ function CardTitle({ icon: Icon, children }: { icon: typeof Award; children: Rea
 export default function Background() {
   return (
     <section id="background" className="scroll-mt-20 border-t border-line">
-      <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
+      <div className="mx-auto w-full max-w-[1360px] px-4 py-20 sm:px-6 lg:px-10 lg:py-28">
         <SectionHeading eyebrow="Background" title="학력 · 활동 · 자격" />
 
         <div className="mt-12 grid gap-5 lg:grid-cols-2">

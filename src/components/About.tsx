@@ -11,7 +11,7 @@ const strengthIcons: Record<Strength["icon"], typeof MousePointerClick> = {
 export default function About() {
   return (
     <section id="about" className="scroll-mt-20 border-t border-line bg-surface">
-      <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
+      <div className="mx-auto w-full max-w-[1360px] px-4 py-20 sm:px-6 lg:px-10 lg:py-28">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <SectionHeading eyebrow="About Me" title="꾸준히 배우고, 피드백으로 성장합니다" />
           <div className="space-y-5 text-base leading-[1.85] text-sub sm:text-[17px]">

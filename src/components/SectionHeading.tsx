@@ -1,3 +1,5 @@
+import { reveal } from "../lib/motion";
+
 type SectionHeadingProps = {
   eyebrow: string;
   title: string;
@@ -6,7 +8,7 @@ type SectionHeadingProps = {
 
 export default function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
   return (
-    <div className="max-w-2xl">
+    <div {...reveal()} className="max-w-2xl">
       <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">
         {eyebrow}
       </p>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import { parallax, reveal } from "../lib/motion";
 import { projects } from "../data/projects";
 
 export default function Projects() {
@@ -15,12 +16,13 @@ export default function Projects() {
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
+            <div key={project.slug} {...reveal("up", index * 150)} className="flex">
             <article
-              key={project.slug}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-canvas transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(18,20,23,0.25)]"
+              className="group flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-canvas transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(18,20,23,0.25)]"
             >
               <Link href={`/projects/${project.slug}`} className="block overflow-hidden border-b border-line">
+                <div {...parallax(0.08)}>
                 <Image
                   src={project.picture}
                   alt={`${project.title} 대표 이미지`}
@@ -29,6 +31,7 @@ export default function Projects() {
                   sizes="(min-width: 768px) 560px, 100vw"
                   className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
+                </div>
               </Link>
 
               <div className="flex flex-1 flex-col p-6 sm:p-7">
@@ -79,6 +82,7 @@ export default function Projects() {
                 </div>
               </div>
             </article>
+            </div>
           ))}
         </div>
       </div>

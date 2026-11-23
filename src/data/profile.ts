@@ -4,7 +4,7 @@ export const profile = {
   name: "강민서",
   englishName: "Kang Minseo",
   role: "Frontend Developer",
-  email: "ming9boo@gmail.com",
+  email: "sandy424@naver.com",
   github: "https://github.com/sandy424",
   resume: "/이력서.pdf",
   status: "공감오래콘텐츠 현장실습 중 · 2027.02 졸업예정",

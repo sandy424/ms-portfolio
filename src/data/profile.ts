@@ -15,13 +15,6 @@ export type Highlight = {
   label: string;
 };
 
-export const highlights: Highlight[] = [
-  { value: "74%", label: "AI 도구 활용으로 단축한 개발 기간" },
-  { value: "150명+", label: "목표 초과 달성한 행사 참여 인원" },
-  { value: "2곳", label: "실무 경험 (현장실습 · 개발 PM)" },
-  { value: "3.94", label: "학점 (4.5 만점)" },
-];
-
 export type Strength = {
   icon: "user" | "feedback" | "team";
   title: string;

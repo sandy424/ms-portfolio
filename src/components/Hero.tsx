@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
 import TerminalTyping from "./TerminalTyping";
-import { highlights, profile } from "../data/profile";
+import { profile } from "../data/profile";
 
 export default function Hero() {
   return (
@@ -55,23 +55,6 @@ export default function Hero() {
         <div className="min-w-0 lg:justify-self-end">
           <TerminalTyping />
         </div>
-      </div>
-
-      <div className="relative mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 lg:pb-24">
-        <dl className="grid grid-cols-2 overflow-hidden rounded-2xl border border-line bg-surface lg:grid-cols-4">
-          {highlights.map((item, index) => (
-            <div
-              key={item.label}
-              className={`p-5 sm:p-7 ${index % 2 === 1 ? "border-l border-line" : ""} ${
-                index >= 2 ? "border-t border-line lg:border-t-0" : ""
-              } ${index === 2 ? "lg:border-l" : ""}`}
-            >
-              <dt className="sr-only">{item.label}</dt>
-              <dd className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">{item.value}</dd>
-              <dd className="mt-2 text-[13px] leading-snug text-muted sm:text-sm">{item.label}</dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

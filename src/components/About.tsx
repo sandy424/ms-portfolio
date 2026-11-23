@@ -15,7 +15,7 @@ export default function About() {
       <div className="mx-auto w-full max-w-[1248px] px-4 py-20 sm:px-6 lg:py-28">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <SectionHeading eyebrow="About Me" title="꾸준히 배우고, 피드백으로 성장합니다" />
-          <div {...reveal("up", 150)} className="space-y-5 text-base leading-[1.85] text-sub sm:text-[17px]">
+          <div {...reveal("up", 250)} className="space-y-5 text-base leading-[1.85] text-sub sm:text-[17px]">
             <p>
               팀 프로젝트와 실무를 경험하며 서로 다른 역할의 동료들과 협업했고, 그 과정에서{" "}
               <strong className="font-semibold text-ink">다양한 관점과 조언을 수용하는 자세</strong>의
@@ -36,12 +36,12 @@ export default function About() {
         </div>
 
         <ul className="mt-16 grid gap-4 md:grid-cols-3">
-          {strengths.map((item, index) => {
+          {strengths.map((item) => {
             const Icon = strengthIcons[item.icon];
             return (
               <li
                 key={item.title}
-                {...reveal("up", index * 120)}
+                {...reveal()}
                 className="rounded-2xl border border-line bg-canvas p-6 transition-colors hover:border-accent/40 sm:p-7"
               >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent">

@@ -71,6 +71,11 @@ body {
   opacity: 1;
   transform: none;
 }
+/* 스크롤 연동 순차 등장: 스크롤에 바로 반응하도록 조금 더 빠르게 */
+[data-reveal-sequence] [data-reveal] {
+  transition-duration: 0.6s;
+  transition-delay: 0ms;
+}
 
 /* ── 패럴랙스 ─────────────────────────────────── */
 [data-parallax] {

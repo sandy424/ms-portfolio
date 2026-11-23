@@ -16,8 +16,8 @@ export default function Projects() {
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <div key={project.slug} {...reveal("up", index * 150)} className="flex">
+          {projects.map((project) => (
+            <div key={project.slug} {...reveal()} className="flex">
             <article
               className="group flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-canvas transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(18,20,23,0.25)]"
             >

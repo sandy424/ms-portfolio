@@ -63,9 +63,22 @@ export default function ScrollEffects() {
     const visible = new Set<HTMLElement>();
     let frame = 0;
 
+    // ── 인트로 스크롤 아웃 ──
+    const scrollOutEls = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll-out]"));
+    const updateScrollOut = () => {
+      scrollOutEls.forEach((el) => {
+        const section = el.parentElement ?? el;
+        const rect = section.getBoundingClientRect();
+        // 인트로 높이의 75%만큼 스크롤하면 완전히 밀려난 상태(1)가 된다.
+        const progress = Math.max(0, Math.min(1, -rect.top / (rect.height * 0.75)));
+        el.style.setProperty("--scroll-out", progress.toFixed(3));
+      });
+    };
+
     const update = () => {
       frame = 0;
       updateSequences();
+      updateScrollOut();
       const viewportCenter = window.innerHeight / 2;
       visible.forEach((el) => {
         const speed = Number(el.dataset.parallax) || 0.1;

@@ -21,7 +21,7 @@ export default function Background() {
         <SectionHeading eyebrow="Background" title="학력 · 활동 · 자격" />
 
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
-          <div {...reveal("up", 0)} className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
+          <div {...reveal()} className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
             <CardTitle icon={GraduationCap}>학력</CardTitle>
             <div className="mt-6 flex flex-wrap items-start justify-between gap-3">
               <div>
@@ -46,7 +46,7 @@ export default function Background() {
             </dl>
           </div>
 
-          <div {...reveal("up", 120)} className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
+          <div {...reveal()} className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
             <CardTitle icon={Users}>교내 활동</CardTitle>
             <div className="mt-6 flex flex-wrap items-start justify-between gap-3">
               <div>

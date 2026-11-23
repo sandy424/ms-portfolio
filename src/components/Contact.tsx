@@ -3,8 +3,9 @@ import { profile } from "../data/profile";
 
 export default function Contact() {
   return (
-    <section id="contact" className="scroll-mt-20 px-4 pb-6 sm:px-6">
-      <div className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-3xl bg-ink px-6 py-16 text-white sm:px-12 sm:py-20">
+    <section id="contact" className="scroll-mt-20 pb-6">
+      <div className="mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-10">
+      <div className="relative overflow-hidden rounded-3xl bg-ink px-6 py-16 text-white sm:px-12 sm:py-20 lg:px-16">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/40 blur-3xl"
@@ -51,10 +52,11 @@ export default function Contact() {
         </div>
       </div>
 
-      <footer className="mx-auto flex w-full max-w-6xl flex-col gap-1 py-8 text-sm text-muted sm:flex-row sm:justify-between">
+      <footer className="flex flex-col gap-1 py-8 text-sm text-muted sm:flex-row sm:justify-between">
         <p>© 2026 {profile.englishName}. All rights reserved.</p>
         <p>Built with Next.js · Tailwind CSS</p>
       </footer>
+      </div>
     </section>
   );
 }

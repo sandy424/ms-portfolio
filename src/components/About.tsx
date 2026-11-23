@@ -36,12 +36,12 @@ export default function About() {
         </div>
 
         <ul className="mt-16 grid gap-4 md:grid-cols-3">
-          {strengths.map((item, index) => {
+          {strengths.map((item) => {
             const Icon = strengthIcons[item.icon];
             return (
               <li
                 key={item.title}
-                {...reveal("up", index * 200)}
+                {...reveal()}
                 className="rounded-2xl border border-line bg-canvas p-6 transition-colors hover:border-accent/40 sm:p-7"
               >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent">

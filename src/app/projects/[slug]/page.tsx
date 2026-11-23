@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({
             {project.tech.map((item) => (
               <li
                 key={item}
-                className="rounded-md border border-line bg-surface px-2 py-1 font-mono text-xs text-sub"
+                className="rounded-md border border-line bg-surface px-2 py-1 font-display text-xs font-medium text-sub"
               >
                 {item}
               </li>
@@ -166,8 +166,8 @@ export default async function ProjectDetailPage({
                   key={challenge.title}
                   className="rounded-2xl border border-line bg-surface p-6 sm:p-8"
                 >
-                  <p className="font-mono text-xs font-semibold text-muted">
-                    CHALLENGE {String(index + 1).padStart(2, "0")}
+                  <p className="font-display text-sm font-semibold text-charcoal">
+                    Challenge {String(index + 1).padStart(2, "0")}
                   </p>
                   <h3 className="mt-2 text-lg font-bold text-ink sm:text-xl">{challenge.title}</h3>
 
@@ -175,7 +175,7 @@ export default async function ProjectDetailPage({
                     {challenge.items.map((item) => (
                       <div key={item.label} className="grid gap-3 sm:grid-cols-[96px_minmax(0,1fr)] sm:gap-5">
                         <span
-                          className={`h-fit w-fit rounded-md px-2 py-1 font-mono text-[11px] font-bold ring-1 ring-inset ${labelStyles[item.label]}`}
+                          className={`h-fit w-fit rounded-md px-2 py-1 font-display text-[11px] font-bold tracking-wide ring-1 ring-inset ${labelStyles[item.label]}`}
                         >
                           {item.label}
                         </span>

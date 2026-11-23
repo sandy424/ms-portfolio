@@ -7,6 +7,11 @@ import { usePathname } from "next/navigation";
 // 빈 틈이 보이지 않도록 그보다 조금 작게 움직인다.
 const MAX_SHIFT_RATIO = 0.07;
 
+// 순차 등장 구간: 컨테이너 윗부분이 화면 높이의 90% 지점에 닿으면 첫 항목이,
+// 30% 지점까지 올라오면 마지막 항목이 나타난다.
+const SEQUENCE_START = 0.9;
+const SEQUENCE_END = 0.3;
+
 /**
  * data-reveal / data-parallax 속성이 붙은 요소에 스크롤 애니메이션을 적용한다.
  * 레이아웃에 한 번만 렌더링하며, 페이지가 바뀌면 새 요소를 다시 찾는다.
@@ -17,6 +22,7 @@ export default function ScrollEffects() {
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealEls = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const sequences = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal-sequence]"));
 
     // 움직임 줄이기 설정이면 애니메이션 없이 바로 보여준다.
     if (reduceMotion) {
@@ -35,7 +41,22 @@ export default function ScrollEffects() {
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0.1 }
     );
-    revealEls.forEach((el) => revealObserver.observe(el));
+    // 순차 등장 컨테이너 안의 요소는 스크롤 위치로 따로 제어한다.
+    revealEls
+      .filter((el) => !el.closest("[data-reveal-sequence]"))
+      .forEach((el) => revealObserver.observe(el));
+
+    // ── 스크롤 연동 순차 등장 ──
+    const updateSequences = () => {
+      const vh = window.innerHeight;
+      sequences.forEach((container) => {
+        const items = Array.from(container.querySelectorAll<HTMLElement>("[data-reveal]"));
+        const top = container.getBoundingClientRect().top;
+        const progress = (vh * SEQUENCE_START - top) / (vh * (SEQUENCE_START - SEQUENCE_END));
+        const shown = progress <= 0 ? 0 : Math.ceil(Math.min(progress, 1) * items.length);
+        items.forEach((item, i) => item.classList.toggle("is-revealed", i < shown));
+      });
+    };
 
     // ── 패럴랙스 ──
     const parallaxEls = Array.from(document.querySelectorAll<HTMLElement>("[data-parallax]"));
@@ -44,6 +65,7 @@ export default function ScrollEffects() {
 
     const update = () => {
       frame = 0;
+      updateSequences();
       const viewportCenter = window.innerHeight / 2;
       visible.forEach((el) => {
         const speed = Number(el.dataset.parallax) || 0.1;
@@ -72,6 +94,7 @@ export default function ScrollEffects() {
       { rootMargin: "20% 0px" }
     );
     parallaxEls.forEach((el) => parallaxObserver.observe(el));
+    requestUpdate();
 
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);

@@ -28,6 +28,14 @@ export function revealSequence() {
 }
 
 /**
+ * 스크롤 아웃 속성. 화면 첫 부분(인트로)에 붙이면
+ * 아래로 스크롤할수록 위로 밀려나며 흐려진다.
+ */
+export function scrollOut() {
+  return { "data-scroll-out": "" };
+}
+
+/**
  * 패럴랙스 속성. overflow-hidden 부모 안의 요소에 사용한다.
  * speed가 클수록 스크롤 대비 더 많이 움직인다. (권장 0.05 ~ 0.15)
  */

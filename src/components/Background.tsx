@@ -46,7 +46,7 @@ export default function Background() {
             </dl>
           </div>
 
-          <div {...reveal("up", 120)} className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
+          <div {...reveal("up", 200)} className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
             <CardTitle icon={Users}>교내 활동</CardTitle>
             <div className="mt-6 flex flex-wrap items-start justify-between gap-3">
               <div>

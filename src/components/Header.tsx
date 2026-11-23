@@ -11,7 +11,7 @@ const navItems = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-canvas/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-[1360px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-10">
         <Link href="/" className="flex items-center gap-2 text-[15px] font-bold tracking-tight text-ink">
           <img src="/Logo.png" alt="" width={26} height={26} className="rounded-md" />
           {profile.englishName}

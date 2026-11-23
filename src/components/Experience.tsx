@@ -4,7 +4,7 @@ import { experiences } from "../data/profile";
 export default function Experience() {
   return (
     <section id="experience" className="scroll-mt-20 border-t border-line">
-      <div className="mx-auto w-full max-w-[1360px] px-4 py-20 sm:px-6 lg:px-10 lg:py-28">
+      <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-10 lg:py-28">
         <SectionHeading
           eyebrow="Experience"
           title="경력"

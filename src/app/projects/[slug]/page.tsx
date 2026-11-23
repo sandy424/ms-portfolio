@@ -30,7 +30,7 @@ function Section({ id, title, children }: { id: string; title: string; children:
   return (
     <section id={id} className="scroll-mt-24 border-t border-line py-14 sm:py-16">
       <h2 {...reveal()} className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">{title}</h2>
-      <div {...reveal("up", 120)} className="mt-8">{children}</div>
+      <div {...reveal("up", 200)} className="mt-8">{children}</div>
     </section>
   );
 }
@@ -119,7 +119,7 @@ export default async function ProjectDetailPage({
           </div>
         </header>
 
-        <div {...reveal("up", 200)} className="mt-12 overflow-hidden rounded-2xl border border-line">
+        <div {...reveal("up", 300)} className="mt-12 overflow-hidden rounded-2xl border border-line">
           <div {...parallax(0.06)}>
             <Image
               src={project.picture}

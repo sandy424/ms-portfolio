@@ -16,7 +16,7 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <li
               key={exp.company}
-              {...reveal("up", index === 0 ? 0 : 80)}
+              {...reveal("up", index === 0 ? 0 : 150)}
               className="grid gap-6 rounded-2xl border border-line bg-surface p-6 sm:p-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10"
             >
               <div>

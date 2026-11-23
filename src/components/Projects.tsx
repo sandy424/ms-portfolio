@@ -1,46 +1,87 @@
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 import { projects } from "../data/projects";
 
 export default function Projects() {
-  return(
-    <section id="projects" className="flex min-h-screen w-full items-center justify-center px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-30">
-      <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-8 lg:flex-row lg:items-stretch lg:justify-center">
-        
-        <div className="flex flex-col gap-12 px-10">
-          {projects.map((project, index) => (
-            <article key={project.title}
-              className={`flex flex-col items-center gap-8 lg:gap-16 ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
-              }`}
+  return (
+    <section id="projects" className="scroll-mt-20 border-t border-line bg-surface">
+      <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
+        <SectionHeading
+          eyebrow="Projects"
+          title="프로젝트"
+          description="문제를 발견하고, 기획부터 배포까지 직접 만들어 본 서비스들입니다."
+        />
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {projects.map((project) => (
+            <article
+              key={project.slug}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-canvas transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(18,20,23,0.25)]"
             >
-              <div className="flex flex-col gap-8 w-full lg:w-1/2">
-                <h2 className="text-3xl font-bold lg:text-4xl">{project.title}</h2>
-                <p className="text-gray-500 text-base">{project.description}</p>
-                <ul className="flex flex-wrap gap-4 pt-2">
+              <Link href={`/projects/${project.slug}`} className="block overflow-hidden border-b border-line">
+                <Image
+                  src={project.picture}
+                  alt={`${project.title} 대표 이미지`}
+                  width={1200}
+                  height={750}
+                  sizes="(min-width: 768px) 560px, 100vw"
+                  className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </Link>
+
+              <div className="flex flex-1 flex-col p-6 sm:p-7">
+                <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-muted">
+                  <span className="rounded-full bg-surface px-2.5 py-1 text-sub">{project.form}</span>
+                  <span className="font-mono">{project.period}</span>
+                </div>
+
+                <h3 className="mt-4 text-2xl font-bold tracking-tight text-ink">{project.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-sub">{project.description}</p>
+
+                <ul className="mt-5 flex flex-wrap gap-1.5">
                   {project.tech.map((item) => (
                     <li
                       key={item}
-                      className="border rounded-full px-3 py-1 border-gray-300 text-sm text-gray-600"
+                      className="rounded-md border border-line bg-surface px-2 py-1 font-mono text-xs text-sub"
                     >
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Link 
-                  href={`/projects/${project.slug}`}
-                  className="mt-4 w-full rounded-xl bg-black py-2 text-lg font-medium text-white cursor-pointer sm:w-auto sm:px-10 text-center"
-                  >
-                  See More
-                </Link>
-              </div>
 
-              <div className="w-full lg:w-1/2">
-                <img src={project.picture} alt={project.title} className="aspect-[4/3] w-full rounded-2xl object-cover" />
+                <div className="mt-auto flex flex-wrap gap-2 pt-7">
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-ink px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ink/85"
+                  >
+                    자세히 보기
+                  </Link>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1 rounded-xl border border-line bg-surface px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink/30"
+                  >
+                    Live
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1 rounded-xl border border-line bg-surface px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink/30"
+                  >
+                    GitHub
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </article>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

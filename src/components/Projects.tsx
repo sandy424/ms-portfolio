@@ -47,7 +47,7 @@ export default function Projects() {
                   {project.tech.map((item) => (
                     <li
                       key={item}
-                      className="rounded-md border border-line bg-surface px-2 py-1 font-mono text-xs text-sub"
+                      className="rounded-md border border-line bg-surface px-2 py-1 font-display text-xs font-medium text-sub"
                     >
                       {item}
                     </li>

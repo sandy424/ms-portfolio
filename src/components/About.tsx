@@ -48,7 +48,7 @@ export default function About() {
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 text-lg font-bold text-ink">{item.title}</h3>
-                <p className="mt-1 font-mono text-xs text-muted">{item.english}</p>
+                <p className="mt-1 font-display text-sm font-medium text-muted">{item.english}</p>
                 <p className="mt-4 text-[15px] leading-relaxed text-sub">{item.description}</p>
               </li>
             );
@@ -60,7 +60,7 @@ export default function About() {
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {stackGroups.map((group) => (
               <div key={group.title}>
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-muted">
+                <p className="font-display text-sm font-semibold text-charcoal">
                   {group.title}
                 </p>
                 <ul className="mt-3 flex flex-wrap gap-2">

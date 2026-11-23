@@ -14,7 +14,7 @@ export default function About() {
     <section id="about" className="scroll-mt-20 border-t border-line bg-surface">
       <div className="mx-auto w-full max-w-[1248px] px-4 py-20 sm:px-6 lg:py-28">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-          <SectionHeading eyebrow="About Me" title="꾸준히 배우고, 피드백으로 성장합니다" />
+          <SectionHeading eyebrow="About me" title="꾸준히 배우고, 피드백으로 성장합니다" />
           <div {...reveal("up", 250)} className="space-y-5 text-base leading-[1.85] text-sub sm:text-[17px]">
             <p>
               팀 프로젝트와 실무를 경험하며 서로 다른 역할의 동료들과 협업했고, 그 과정에서{" "}

@@ -7,7 +7,7 @@ import { projects } from "../data/projects";
 export default function Projects() {
   return (
     <section id="projects" className="scroll-mt-20 border-t border-line bg-surface">
-      <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-10 lg:py-28">
+      <div className="mx-auto w-full max-w-[1248px] px-4 py-20 sm:px-6 lg:py-28">
         <SectionHeading
           eyebrow="Projects"
           title="프로젝트"

@@ -10,7 +10,7 @@ export default function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(18,20,23,0.08)_1px,transparent_0)] [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"
       />
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 pb-16 pt-14 sm:px-6 sm:pt-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16 lg:pb-24 lg:pt-28">
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-4 pb-16 pt-14 sm:px-6 sm:pt-20 lg:px-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16 lg:pb-24 lg:pt-28">
         <div className="min-w-0">
           <h1 className="text-[2.25rem] font-bold leading-[1.25] tracking-tight text-ink sm:text-5xl lg:text-[3.5rem]">
             사용자 관점에서

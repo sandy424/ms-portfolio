@@ -60,7 +60,7 @@ export default function Hero() {
           aria-label="다음 내용으로 스크롤"
           className="flex animate-[intro-fade_1.2s_cubic-bezier(0.16,1,0.3,1)_1.2s_both] flex-col items-center gap-3 text-muted transition-colors hover:text-ink"
         >
-          <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.3em]">Scroll</span>
+          <span className="font-display text-xs font-semibold uppercase tracking-[0.2em]">Scroll</span>
           <span className="relative h-12 w-px overflow-hidden bg-line">
             <span className="absolute inset-x-0 top-0 h-1/2 animate-[scroll-cue_1.8s_cubic-bezier(0.65,0,0.35,1)_infinite] bg-ink motion-reduce:animate-none" />
           </span>

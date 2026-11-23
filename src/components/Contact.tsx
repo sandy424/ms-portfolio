@@ -12,7 +12,7 @@ export default function Contact() {
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/40 blur-3xl"
         />
         <div className="relative max-w-2xl">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+          <p className="font-display text-xl font-semibold leading-none tracking-[-0.01em] text-white/70 sm:text-[22px]">
             Contact
           </p>
           <h2 className="mt-3 text-3xl font-bold leading-snug tracking-tight sm:text-4xl">

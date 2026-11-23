@@ -14,7 +14,7 @@ export default function About() {
     <section id="about" className="scroll-mt-20 border-t border-line bg-surface">
       <div className="mx-auto w-full max-w-[1248px] px-4 py-20 sm:px-6 lg:py-28">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-          <SectionHeading eyebrow="About Me" title="꾸준히 배우고, 피드백으로 성장합니다" />
+          <SectionHeading eyebrow="About me" title="꾸준히 배우고, 피드백으로 성장합니다" />
           <div {...reveal("up", 250)} className="space-y-5 text-base leading-[1.85] text-sub sm:text-[17px]">
             <p>
               팀 프로젝트와 실무를 경험하며 서로 다른 역할의 동료들과 협업했고, 그 과정에서{" "}
@@ -48,7 +48,7 @@ export default function About() {
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 text-lg font-bold text-ink">{item.title}</h3>
-                <p className="mt-1 font-mono text-xs text-muted">{item.english}</p>
+                <p className="mt-1 font-display text-sm font-medium text-muted">{item.english}</p>
                 <p className="mt-4 text-[15px] leading-relaxed text-sub">{item.description}</p>
               </li>
             );
@@ -60,7 +60,7 @@ export default function About() {
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {stackGroups.map((group) => (
               <div key={group.title}>
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-muted">
+                <p className="font-display text-sm font-semibold text-charcoal">
                   {group.title}
                 </p>
                 <ul className="mt-3 flex flex-wrap gap-2">

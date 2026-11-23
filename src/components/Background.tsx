@@ -1,5 +1,6 @@
 import { Award, GraduationCap, Users } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import { reveal } from "../lib/motion";
 import { activity, certifications, education } from "../data/profile";
 
 function CardTitle({ icon: Icon, children }: { icon: typeof Award; children: React.ReactNode }) {
@@ -20,7 +21,7 @@ export default function Background() {
         <SectionHeading eyebrow="Background" title="학력 · 활동 · 자격" />
 
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
-          <div className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
+          <div {...reveal("up", 0)} className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
             <CardTitle icon={GraduationCap}>학력</CardTitle>
             <div className="mt-6 flex flex-wrap items-start justify-between gap-3">
               <div>
@@ -45,7 +46,7 @@ export default function Background() {
             </dl>
           </div>
 
-          <div className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
+          <div {...reveal("up", 120)} className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
             <CardTitle icon={Users}>교내 활동</CardTitle>
             <div className="mt-6 flex flex-wrap items-start justify-between gap-3">
               <div>
@@ -81,7 +82,7 @@ export default function Background() {
           </div>
         </div>
 
-        <div className="mt-5 rounded-2xl border border-line bg-surface p-6 sm:p-8">
+        <div {...reveal()} className="mt-5 rounded-2xl border border-line bg-surface p-6 sm:p-8">
           <CardTitle icon={Award}>자격 · 어학</CardTitle>
           <ul className="mt-6 grid gap-x-8 sm:grid-cols-2">
             {certifications.map((cert) => (

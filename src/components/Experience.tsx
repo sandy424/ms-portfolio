@@ -1,5 +1,6 @@
 import SectionHeading from "./SectionHeading";
 import { experiences } from "../data/profile";
+import { reveal } from "../lib/motion";
 
 export default function Experience() {
   return (
@@ -12,9 +13,10 @@ export default function Experience() {
         />
 
         <ol className="mt-12 space-y-5">
-          {experiences.map((exp) => (
+          {experiences.map((exp, index) => (
             <li
               key={exp.company}
+              {...reveal("up", index === 0 ? 0 : 80)}
               className="grid gap-6 rounded-2xl border border-line bg-surface p-6 sm:p-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10"
             >
               <div>

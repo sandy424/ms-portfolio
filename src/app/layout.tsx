@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "../components/Header";
+import ScrollEffects from "../components/ScrollEffects";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -47,10 +48,15 @@ export default function RootLayout({
           crossOrigin="anonymous"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
+        {/* JavaScript가 꺼져 있어도 콘텐츠가 보이도록 */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body className="flex min-h-full flex-col">
         <Header />
         {children}
+        <ScrollEffects />
       </body>
     </html>
   );

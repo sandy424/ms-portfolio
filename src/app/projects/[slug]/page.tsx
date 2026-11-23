@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "../../../data/projects";
 import { ParItem } from "@/src/types/project";
 import SlidePpt from "@/src/components/SlidePpt";
+import { parallax, reveal } from "@/src/lib/motion";
 
 const labelStyles: Record<ParItem["label"], string> = {
   PROBLEM: "bg-rose-50 text-rose-700 ring-rose-200",
@@ -28,8 +29,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24 border-t border-line py-14 sm:py-16">
-      <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">{title}</h2>
-      <div className="mt-8">{children}</div>
+      <h2 {...reveal()} className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">{title}</h2>
+      <div {...reveal("up", 120)} className="mt-8">{children}</div>
     </section>
   );
 }
@@ -67,7 +68,7 @@ export default async function ProjectDetailPage({
           프로젝트 목록으로
         </Link>
 
-        <header className="mt-10">
+        <header {...reveal()} className="mt-10">
           <h1 className="break-words text-4xl font-bold tracking-tight text-ink sm:text-5xl">
             {project.title}
           </h1>
@@ -118,14 +119,18 @@ export default async function ProjectDetailPage({
           </div>
         </header>
 
-        <Image
-          src={project.picture}
-          alt={`${project.title} 대표 이미지`}
-          width={1200}
-          height={675}
-          priority
-          className="mt-12 aspect-[16/9] w-full rounded-2xl border border-line object-cover"
-        />
+        <div {...reveal("up", 200)} className="mt-12 overflow-hidden rounded-2xl border border-line">
+          <div {...parallax(0.06)}>
+            <Image
+              src={project.picture}
+              alt={`${project.title} 대표 이미지`}
+              width={1200}
+              height={675}
+              priority
+              className="aspect-[16/9] w-full object-cover"
+            />
+          </div>
+        </div>
 
         <div className="mt-14">
           <Section id="why" title="왜 만들었나">

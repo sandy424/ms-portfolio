@@ -19,7 +19,7 @@ export const highlights: Highlight[] = [
   { value: "74%", label: "AI 도구 활용으로 단축한 개발 기간" },
   { value: "150명+", label: "목표 초과 달성한 행사 참여 인원" },
   { value: "2곳", label: "실무 경험 (현장실습 · 개발 PM)" },
-  { value: "3.87", label: "학점 (4.5 만점)" },
+  { value: "3.94", label: "학점 (4.5 만점)" },
 ];
 
 export type Strength = {
@@ -168,7 +168,7 @@ export const education = {
   major: "AI소프트웨어학부",
   period: "2023.03 ~ 2027.02",
   status: "졸업예정",
-  gpa: "3.87",
+  gpa: "3.94",
   gpaMax: "4.5",
 };
 

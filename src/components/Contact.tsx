@@ -4,7 +4,7 @@ import { profile } from "../data/profile";
 export default function Contact() {
   return (
     <section id="contact" className="scroll-mt-20 pb-6">
-      <div className="mx-auto w-full max-w-[1360px] px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
       <div className="relative overflow-hidden rounded-3xl bg-ink px-6 py-16 text-white sm:px-12 sm:py-20 lg:px-16">
         <div
           aria-hidden

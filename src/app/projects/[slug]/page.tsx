@@ -58,7 +58,7 @@ export default async function ProjectDetailPage({
 
   return (
     <main className="flex-1">
-      <div className="mx-auto w-full max-w-5xl px-4 pb-24 pt-10 sm:px-6 sm:pt-14">
+      <div className="mx-auto w-full max-w-4xl px-4 pb-24 pt-10 sm:px-6 sm:pt-14">
         <Link
           href="/#projects"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-ink"

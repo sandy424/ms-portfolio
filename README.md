@@ -42,4 +42,4 @@ npm run dev
 ## 📬 Contact
 
 - GitHub: [@sandy424](https://github.com/sandy424)
-- Email: ming9boo@gmail.com
+- Email: sandy424@naver.com

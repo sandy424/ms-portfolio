@@ -1,6 +1,6 @@
 import SectionHeading from "./SectionHeading";
 import { stackGroups, strengths } from "../data/profile";
-import { reveal } from "../lib/motion";
+import { reveal, revealSequence } from "../lib/motion";
 
 export default function About() {
   return (
@@ -28,27 +28,23 @@ export default function About() {
           </div>
         </div>
 
-        <ul className="mt-16 grid gap-4 md:grid-cols-2">
+        {/* 핵심 역량: 스크롤을 내리는 만큼 한 줄씩 올라온다 */}
+        <ul {...revealSequence()} className="mt-16 border-t border-line">
           {strengths.map((item, index) => (
-            <li key={item.title} {...reveal()} className="flex">
-              <article className="group relative flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-canvas p-6 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-sky/50 hover:shadow-[0_24px_48px_-28px_rgba(35,133,201,0.4)] sm:p-8">
-                {/* 마우스를 올리면 위쪽에 하늘 → 핑크 선이 그어진다 */}
+            <li key={item.title} {...reveal("up")} className="border-b border-line">
+              <div className="group grid gap-2 rounded-xl px-2 py-7 transition-colors duration-300 hover:bg-[linear-gradient(90deg,var(--color-sky-soft),transparent_75%)] md:grid-cols-[88px_minmax(0,340px)_minmax(0,1fr)] md:items-baseline md:gap-8 md:px-5 md:py-8">
                 <span
                   aria-hidden
-                  className="bg-brand-gradient absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"
-                />
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute right-6 top-5 font-display text-5xl font-semibold tabular-nums text-line transition-colors duration-300 group-hover:text-sky/30 sm:right-8 sm:top-6"
+                  className="font-display text-3xl font-semibold tabular-nums text-line transition-colors duration-300 group-hover:text-sky md:text-[40px]"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
-
-                <p className="font-display text-sm font-semibold text-sky-deep">{item.keyword}</p>
-                <h3 className="mt-2 pr-16 text-xl font-bold tracking-tight text-ink sm:text-[22px]">{item.title}</h3>
-                <p className="mt-4 text-[15px] leading-relaxed text-sub">{item.description}</p>
-
-              </article>
+                <div>
+                  <p className="font-display text-sm font-semibold text-sky-deep">{item.keyword}</p>
+                  <h3 className="mt-1.5 text-xl font-bold tracking-tight text-ink sm:text-[22px]">{item.title}</h3>
+                </div>
+                <p className="mt-2 text-[15px] leading-relaxed text-sub md:mt-0">{item.description}</p>
+              </div>
             </li>
           ))}
         </ul>

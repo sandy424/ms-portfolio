@@ -18,8 +18,6 @@ export type Strength = {
   keyword: string;
   title: string;
   description: string;
-  /** 이 역량을 보여준 실제 경험 */
-  evidence: string;
 };
 
 // 자기소개서(직무 경험 · 장점 · 팀워크 · 단점 극복)를 바탕으로 정리
@@ -29,28 +27,24 @@ export const strengths: Strength[] = [
     title: "사용자의 눈으로 화면을 봅니다",
     description:
       "처음 방문한 사용자도 서비스의 목적과 주요 기능을 쉽게 파악할 수 있도록 화면 구성을 기획하고, 반복 테스트로 사용 편의성을 다듬습니다.",
-    evidence: "공감오래콘텐츠 · 커뮤니티 사이트 UI 개선",
   },
   {
     keyword: "Feedback Loop",
     title: "피드백을 다음 결과물에 남깁니다",
     description:
       "부족한 점에 대한 의견을 더 나은 결과물을 위한 과정으로 받아들이고, 한 번 받은 피드백은 다음 업무에도 적용해 같은 부분을 개선합니다.",
-    evidence: "팀 프로젝트 · 피드백을 반영한 코드 개선",
   },
   {
     keyword: "Clear Communication",
     title: "정보를 명확하게 전달합니다",
     description:
       "회의 내용을 AI 도구로 정리하고 업무별로 나눠, 개발자와 기관 담당자, 파견 전문가가 각자의 역할과 진행 상황을 바로 파악하도록 도왔습니다.",
-    evidence: "예이린사회적협동조합 · 개발 PM",
   },
   {
     keyword: "Proactive",
     title: "먼저 묻고, 먼저 움직입니다",
     description:
       "의견을 쉽게 꺼내지 못하던 점을 피드백으로 알게 된 뒤, 필요한 내용은 직접 질문하고 동료에게 먼저 의견을 묻는 방식으로 소통을 바꾸었습니다.",
-    evidence: "공감오래콘텐츠 · 현장실습",
   },
 ];
 

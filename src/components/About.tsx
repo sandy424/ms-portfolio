@@ -46,12 +46,8 @@ export default function About() {
 
                 <p className="font-display text-sm font-semibold text-sky-deep">{item.keyword}</p>
                 <h3 className="mt-2 pr-16 text-xl font-bold tracking-tight text-ink sm:text-[22px]">{item.title}</h3>
-                <p className="mb-6 mt-4 text-[15px] leading-relaxed text-sub">{item.description}</p>
+                <p className="mt-4 text-[15px] leading-relaxed text-sub">{item.description}</p>
 
-                <div className="mt-auto flex items-center gap-2 border-t border-line pt-4 text-sm text-muted">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-sky" aria-hidden />
-                  {item.evidence}
-                </div>
               </article>
             </li>
           ))}

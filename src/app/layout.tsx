@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import Header from "../components/Header";
 import ScrollEffects from "../components/ScrollEffects";
+import CustomCursor from "../components/CustomCursor";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -64,6 +65,7 @@ export default function RootLayout({
         <Header />
         {children}
         <ScrollEffects />
+        <CustomCursor />
       </body>
     </html>
   );

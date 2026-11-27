@@ -140,3 +140,69 @@ body {
     transform: none;
   }
 }
+
+/* ── 커스텀 커서 ───────────────────────────────── */
+.custom-cursor {
+  display: none;
+}
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+html.has-custom-cursor iframe {
+  cursor: auto !important;
+}
+html.has-custom-cursor .custom-cursor {
+  display: block;
+}
+.custom-cursor__dot,
+.custom-cursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+html[data-cursor-visible="true"] .custom-cursor__dot,
+html[data-cursor-visible="true"] .custom-cursor__ring {
+  opacity: 1;
+}
+/* 위치(transform)는 JS가 바꾸고, 크기 변화는 안쪽 span이 맡는다. */
+.custom-cursor__dot span,
+.custom-cursor__ring span {
+  position: absolute;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    scale 0.15s ease;
+}
+.custom-cursor__dot span {
+  width: 8px;
+  height: 8px;
+  background: var(--color-sky-deep);
+}
+.custom-cursor__ring span {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid color-mix(in srgb, var(--color-sky) 70%, transparent);
+}
+html[data-cursor-hover="true"] .custom-cursor__ring span {
+  width: 56px;
+  height: 56px;
+  border-color: transparent;
+  background: color-mix(in srgb, var(--color-sky) 22%, transparent);
+}
+html[data-cursor-hover="true"] .custom-cursor__dot span {
+  width: 6px;
+  height: 6px;
+}
+html[data-cursor-down="true"] .custom-cursor__ring span {
+  scale: 0.85;
+}

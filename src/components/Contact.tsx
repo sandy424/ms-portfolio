@@ -9,7 +9,11 @@ export default function Contact() {
       <div {...reveal("scale")} className="relative overflow-hidden rounded-3xl bg-ink px-6 py-16 text-white sm:px-12 sm:py-20 lg:px-16">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/40 blur-3xl"
+          className="pointer-events-none absolute -right-20 -top-28 h-80 w-80 rounded-full bg-sky/25 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-32 right-1/4 h-72 w-72 rounded-full bg-pink/20 blur-3xl"
         />
         <div className="relative max-w-2xl">
           <p className="font-display text-xl font-semibold leading-none tracking-[-0.01em] text-white/70 sm:text-[22px]">
@@ -18,7 +22,7 @@ export default function Contact() {
           <h2 className="mt-3 text-3xl font-bold leading-snug tracking-tight sm:text-4xl">
             읽어주셔서 감사합니다.
             <br />
-            함께 일할 기회를 기다리고 있습니다.
+            <span className="text-gradient">함께 일할 기회</span>를 기다리고 있습니다.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-white/65 sm:text-lg">
             궁금한 점이나 제안이 있으시면 편하게 연락 주세요.

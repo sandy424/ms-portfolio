@@ -19,7 +19,7 @@ export default function Projects() {
           {projects.map((project) => (
             <div key={project.slug} {...reveal()} className="flex">
             <article
-              className="group flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-canvas transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(18,20,23,0.25)]"
+              className="group flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-canvas transition-all duration-200 hover:-translate-y-1 hover:border-sky/50 hover:shadow-[0_24px_48px_-24px_rgba(91,180,238,0.45)]"
             >
               <Link href={`/projects/${project.slug}`} className="block overflow-hidden border-b border-line">
                 <div {...parallax(0.08)}>

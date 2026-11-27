@@ -7,10 +7,11 @@ import { reveal, scrollOut } from "../lib/motion";
 export default function Hero() {
   return (
     <section className="relative flex min-h-[calc(100svh-4rem)] flex-col overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(18,20,23,0.08)_1px,transparent_0)] [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"
-      />
+      {/* 하늘색 · 핑크 배경 빛 */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -right-32 -top-40 h-[34rem] w-[34rem] rounded-full bg-sky/25 blur-[110px]" />
+        <div className="absolute -bottom-48 left-[-8rem] h-[30rem] w-[30rem] rounded-full bg-pink/25 blur-[110px]" />
+      </div>
       <div
         {...scrollOut()}
         className="relative mx-auto grid w-full max-w-[1248px] flex-1 content-center items-center gap-12 px-4 py-12 sm:px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16"
@@ -19,7 +20,7 @@ export default function Hero() {
           <h1 {...reveal("up", 100)} className="text-[2.25rem] font-bold leading-[1.25] tracking-tight text-ink sm:text-5xl lg:text-[3.5rem]">
             사용자 관점에서
             <br />
-            <span className="text-accent">더 나은 화면</span>을 만드는
+            <span className="text-gradient">더 나은 화면</span>을 만드는
             <br />
             프론트엔드 개발자 강민서입니다.
           </h1>
@@ -62,7 +63,7 @@ export default function Hero() {
         >
           <span className="font-display text-xs font-semibold uppercase tracking-[0.2em]">Scroll</span>
           <span className="relative h-12 w-px overflow-hidden bg-line">
-            <span className="absolute inset-x-0 top-0 h-1/2 animate-[scroll-cue_1.8s_cubic-bezier(0.65,0,0.35,1)_infinite] bg-ink motion-reduce:animate-none" />
+            <span className="absolute inset-x-0 top-0 h-1/2 animate-[scroll-cue_1.8s_cubic-bezier(0.65,0,0.35,1)_infinite] bg-brand-gradient motion-reduce:animate-none" />
           </span>
         </a>
       </div>

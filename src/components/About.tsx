@@ -42,9 +42,9 @@ export default function About() {
               <li
                 key={item.title}
                 {...reveal()}
-                className="rounded-2xl border border-line bg-canvas p-6 transition-colors hover:border-accent/40 sm:p-7"
+                className="rounded-2xl border border-line bg-canvas p-6 transition-colors hover:border-sky/60 sm:p-7"
               >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-soft text-sky-deep">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-5 text-lg font-bold text-ink">{item.title}</h3>
@@ -72,7 +72,7 @@ export default function About() {
                       {item.icon ? (
                         <img src={item.icon} alt="" className="h-4 w-4 object-contain" />
                       ) : (
-                        <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+                        <span className="h-1.5 w-1.5 rounded-full bg-sky" aria-hidden />
                       )}
                       {item.name}
                     </li>

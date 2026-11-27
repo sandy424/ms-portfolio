@@ -6,7 +6,7 @@ import { activity, certifications, education } from "../data/profile";
 function CardTitle({ icon: Icon, children }: { icon: typeof Award; children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2.5">
-      <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-accent-soft text-accent">
+      <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-sky-soft text-sky-deep">
         <Icon className="h-[18px] w-[18px]" aria-hidden />
       </span>
       <h3 className="text-lg font-bold text-ink">{children}</h3>
@@ -60,7 +60,7 @@ export default function Background() {
                 <li key={step} className="flex items-center gap-1.5">
                   <span
                     className={`rounded-full px-2.5 py-1 ${
-                      i === activity.path.length - 1 ? "bg-accent text-white" : "bg-canvas text-sub"
+                      i === activity.path.length - 1 ? "bg-sky-deep text-white" : "bg-canvas text-sub"
                     }`}
                   >
                     {step}
@@ -94,7 +94,7 @@ export default function Background() {
                 <div className="min-w-0">
                   <p className="font-semibold text-ink">
                     {cert.name}
-                    {cert.detail && <span className="ml-2 text-sm font-medium text-accent">{cert.detail}</span>}
+                    {cert.detail && <span className="ml-2 text-sm font-medium text-sky-deep">{cert.detail}</span>}
                   </p>
                   <p className="mt-0.5 text-sm text-muted">{cert.issuer}</p>
                 </div>

@@ -8,8 +8,8 @@ import SlidePpt from "@/src/components/SlidePpt";
 import { parallax, reveal } from "@/src/lib/motion";
 
 const labelStyles: Record<ParItem["label"], string> = {
-  PROBLEM: "bg-rose-50 text-rose-700 ring-rose-200",
-  ACTION: "bg-accent-soft text-accent ring-accent/25",
+  PROBLEM: "bg-pink-soft text-pink-deep ring-pink/40",
+  ACTION: "bg-sky-soft text-sky-deep ring-sky/40",
   RESULT: "bg-emerald-50 text-emerald-700 ring-emerald-200",
 };
 

@@ -43,9 +43,9 @@ export default function Experience() {
                     {exp.metrics.map((metric) => (
                       <div
                         key={metric.label}
-                        className="rounded-xl border border-accent/20 bg-accent-soft px-4 py-2.5"
+                        className="rounded-xl border border-sky/30 bg-sky-soft px-4 py-2.5"
                       >
-                        <span className="text-lg font-bold text-accent">{metric.value}</span>
+                        <span className="text-lg font-bold text-sky-deep">{metric.value}</span>
                         <span className="ml-2 text-sm text-sub">{metric.label}</span>
                       </div>
                     ))}

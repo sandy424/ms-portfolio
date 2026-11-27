@@ -1,15 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #f7f7f5;
+  --color-canvas: #f7f9fc;
   --color-surface: #ffffff;
   --color-ink: #121417;
   --color-sub: #464c55;
   --color-muted: #7b818b;
   --color-charcoal: #36393f;
-  --color-line: #e7e6e2;
-  --color-accent: #3b5bfd;
-  --color-accent-soft: #eef1ff;
+  --color-line: #e5e9f0;
+  /* 하늘색 · 핑크 포인트 */
+  --color-sky: #5bb4ee;
+  --color-sky-deep: #2385c9;
+  --color-sky-soft: #e9f5fd;
+  --color-pink: #f28bb8;
+  --color-pink-deep: #d4468a;
+  --color-pink-soft: #fdeef5;
+  --color-accent: var(--color-sky-deep);
+  --color-accent-soft: var(--color-sky-soft);
 
   --font-sans: "Pretendard Variable", Pretendard, var(--font-geist-sans),
     -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo",
@@ -33,7 +40,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-pink);
   color: #fff;
 }
 
@@ -47,6 +54,17 @@ body {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* ── 하늘색 → 핑크 그라데이션 ───────────────────── */
+.text-gradient {
+  background: linear-gradient(100deg, var(--color-sky) 0%, #a99be8 50%, var(--color-pink) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bg-brand-gradient {
+  background: linear-gradient(100deg, var(--color-sky) 0%, #a99be8 50%, var(--color-pink) 100%);
 }
 
 /* ── 스크롤 등장 ───────────────────────────────── */

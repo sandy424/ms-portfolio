@@ -1,13 +1,6 @@
-import { MessagesSquare, MousePointerClick, RefreshCw } from "lucide-react";
 import SectionHeading from "./SectionHeading";
-import { stackGroups, strengths, type Strength } from "../data/profile";
+import { stackGroups, strengths } from "../data/profile";
 import { reveal } from "../lib/motion";
-
-const strengthIcons: Record<Strength["icon"], typeof MousePointerClick> = {
-  user: MousePointerClick,
-  feedback: RefreshCw,
-  team: MessagesSquare,
-};
 
 export default function About() {
   return (
@@ -35,24 +28,33 @@ export default function About() {
           </div>
         </div>
 
-        <ul className="mt-16 grid gap-4 md:grid-cols-3">
-          {strengths.map((item) => {
-            const Icon = strengthIcons[item.icon];
-            return (
-              <li
-                key={item.title}
-                {...reveal()}
-                className="rounded-2xl border border-line bg-canvas p-6 transition-colors hover:border-sky/60 sm:p-7"
-              >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-soft text-sky-deep">
-                  <Icon className="h-5 w-5" aria-hidden />
+        <ul className="mt-16 grid gap-4 md:grid-cols-2">
+          {strengths.map((item, index) => (
+            <li key={item.title} {...reveal()} className="flex">
+              <article className="group relative flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-canvas p-6 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-sky/50 hover:shadow-[0_24px_48px_-28px_rgba(35,133,201,0.4)] sm:p-8">
+                {/* 마우스를 올리면 위쪽에 하늘 → 핑크 선이 그어진다 */}
+                <span
+                  aria-hidden
+                  className="bg-brand-gradient absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"
+                />
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute right-6 top-5 font-display text-5xl font-semibold tabular-nums text-line transition-colors duration-300 group-hover:text-sky/30 sm:right-8 sm:top-6"
+                >
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-5 text-lg font-bold text-ink">{item.title}</h3>
-                <p className="mt-1 font-display text-sm font-medium text-muted">{item.english}</p>
-                <p className="mt-4 text-[15px] leading-relaxed text-sub">{item.description}</p>
-              </li>
-            );
-          })}
+
+                <p className="font-display text-sm font-semibold text-sky-deep">{item.keyword}</p>
+                <h3 className="mt-2 pr-16 text-xl font-bold tracking-tight text-ink sm:text-[22px]">{item.title}</h3>
+                <p className="mb-6 mt-4 text-[15px] leading-relaxed text-sub">{item.description}</p>
+
+                <div className="mt-auto flex items-center gap-2 border-t border-line pt-4 text-sm text-muted">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-sky" aria-hidden />
+                  {item.evidence}
+                </div>
+              </article>
+            </li>
+          ))}
         </ul>
 
         <div {...reveal()} className="mt-16 rounded-2xl border border-line p-6 sm:p-8">

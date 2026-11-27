@@ -76,16 +76,7 @@ const DEFAULT_LINES: TerminalLine[] = [
     tokens: [
       { text: "tools: ", color: "key" },
       { text: '["Figma", "Github"]', color: "string" },
-      { text: ",", color: "plain" },
     ]
-  },
-  {
-    type: "code",
-    indent: true,
-    tokens: [
-      { text: "now: ", color: "key" },
-      { text: '"공감오래콘텐츠 현장실습 중"', color: "string" },
-    ],
   },
   {
     type: "code",
@@ -205,7 +196,7 @@ export default function TerminalTyping({
       </div>
 
       {/* 본문 */}
-      <div className="min-h-[300px] px-5 py-6 text-sm leading-[1.8] sm:px-6 sm:py-7 sm:text-[15px]">
+      <div className="min-h-[270px] px-5 py-6 text-sm leading-[1.8] sm:px-6 sm:py-7 sm:text-[15px]">
         {lines.map((line, i) => {
           if (i > activeLine) return null;
           const count = renderedCounts[i] ?? 0;

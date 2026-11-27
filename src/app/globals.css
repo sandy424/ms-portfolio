@@ -122,6 +122,14 @@ body {
   }
 }
 
+/* ── 스크롤 스택 카드 ───────────────────────────── */
+[data-stack] > * {
+  transform: scale(calc(1 - var(--stack-p, 0) * 0.08));
+  filter: brightness(calc(1 - var(--stack-p, 0) * 0.06));
+  transform-origin: center top;
+  will-change: transform;
+}
+
 /* ── 패럴랙스 ─────────────────────────────────── */
 [data-parallax] {
   transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.15);
@@ -135,7 +143,8 @@ body {
     transition: none;
   }
   [data-parallax],
-  [data-scroll-out] {
+  [data-scroll-out],
+  [data-stack] > * {
     opacity: 1;
     transform: none;
   }

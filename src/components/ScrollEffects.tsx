@@ -75,10 +75,30 @@ export default function ScrollEffects() {
       });
     };
 
+    // ── 스크롤 스택 카드 ──
+    // 다음 카드가 덮어오는 만큼 앞 카드가 살짝 작아지고 어두워진다. (--stack-p: 0 → 1)
+    const stackEls = Array.from(document.querySelectorAll<HTMLElement>("[data-stack]"));
+    const updateStacks = () => {
+      stackEls.forEach((el, i) => {
+        const next = stackEls[i + 1];
+        const inner = el.firstElementChild as HTMLElement | null;
+        if (!inner) return;
+        if (!next) {
+          inner.style.setProperty("--stack-p", "0");
+          return;
+        }
+        const rect = el.getBoundingClientRect();
+        const nextTop = next.getBoundingClientRect().top;
+        const p = Math.max(0, Math.min(1, (rect.bottom - nextTop) / rect.height));
+        inner.style.setProperty("--stack-p", p.toFixed(3));
+      });
+    };
+
     const update = () => {
       frame = 0;
       updateSequences();
       updateScrollOut();
+      updateStacks();
       const viewportCenter = window.innerHeight / 2;
       visible.forEach((el) => {
         const speed = Number(el.dataset.parallax) || 0.1;
